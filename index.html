@@ -1,59 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TailwindCSS</title>
+    <link rel="stylesheet" href="dist/css/input.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TailwindCSS</title>
-  <link rel="stylesheet" href="dist/input.css">
-</head>
-
-<body class="bg-grey-lighter">
-  <div class="container">
-    <div class="block md:flex">
-      <div class="w-full md:w-1/3 bg-grey-dark p-4 mb-3 mr-3">
-        <div class="font-light text-5xl mb-5">
-          Sidebar
+  <body class="font-sans">
+    <div id="app">
+      <nav
+        class="flex bg-grey-darkest p-5 justify-between items-center flex-wrap"
+      >
+        <div class="flex">
+          <a
+            href=""
+            class="text-grey-lighter text-xl hover:text-white no-underline mr-12"
+            >Delafan</a
+          >
         </div>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod ad a nihil sapiente veritatis in accusamus quam
-        minus. Ratione sit quidem enim accusamus aspernatur quos reprehenderit hic asperiores similique ipsa?
-      </div>
-      <div class="w-full bg-grey-dark p-4 mb-3 mr-3">
-        <div class="mb-5">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod ad a nihil sapiente veritatis in accusamus quam
-          minus. Ratione sit quidem enim accusamus aspernatur quos reprehenderit hic asperiores similique ipsa?
+        <div class="block md:hidden">
+          <button
+            @click="toggle"
+            class="focus:outline-none border border-white py-1 px-2 rounded text-white hover:bg-white hover:text-black"
+          >
+            <svg
+              class="w-5 h-5"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 17 14"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M1 1h15M1 7h15M1 13h15"
+              />
+            </svg>
+          </button>
         </div>
-        <div class="block md:flex">
-          <div class="bg-white p-3 mr-0 mb-5 md:mb-0 md:mr-5">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores
-            praesentium delectus eligendi! Quas itaque tempora nobis consequuntur natus minima nisi architecto deleniti
-            quisquam quasi soluta, eos expedita veritatis laudantium doloremque.
+        <div
+          :class="open ? 'block' : 'hidden'"
+          class="w-full block flex-grow md:flex md:w-auto"
+        >
+          <div class="text-sm md:flex-grow">
+            <a
+              href=""
+              class="block md:inline-block mt-5 md:mt-0 text-grey-lighter hover:text-white no-underline mr-6"
+              >Series</a
+            >
+            <a
+              href=""
+              class="block md:inline-block mt-5 md:mt-0 text-grey-lighter hover:text-white no-underline mr-6"
+              >Premium</a
+            >
+            <a
+              href=""
+              class="block md:inline-block mt-5 md:mt-0 text-grey-lighter hover:text-white no-underline"
+              >Search</a
+            >
           </div>
-          <div class="bg-white p-3 mr-0 mb-5 md:mb-0 md:mr-5">
-            Culpa pariatur perferendis perspiciatis corporis voluptatibus nulla rerum
-            aperiam officia, excepturi ea praesentium eveniet illum quidem tempora iste beatae! Nesciunt placeat earum,
-            nemo vitae assumenda velit? Tenetur explicabo similique beatae.
+          <div class="">
+            <a
+              href=""
+              class="block md:inline-block mt-5 md:mt-0 text-grey-lighter hover:text-white no-underline mr-6"
+              >Login</a
+            >
+            <a
+              href=""
+              class="block md:inline-block mt-5 md:mt-0 text-grey-lighter hover:text-white no-underline"
+              >Register</a
+            >
           </div>
-          <div class="bg-white p-3 mr-0 mb-5 md:mb-0 md:mr-5">
-            Nobis deserunt commodi earum voluptatum vitae repellendus aperiam provident
-            iusto. Debitis, aut? Placeat esse omnis sint accusantium qui nemo, ratione quae sit, sed odio sequi eligendi
-            tempora eius non quidem.
+        </div>
+      </nav>
+      <div class="bg-black py-24 text-white">
+        <div class="container">
+          <div class="font-light text-5xl mb-3">
+            Saiful Labib Marzuqi Hidayat
           </div>
-          <div class="bg-white p-3 mr-0 mb-5 md:mb-0 md:mr-5">
-            Quos nemo ipsum, optio est non natus a molestias, tenetur aspernatur numquam
-            officiis quaerat eius illum, temporibus unde recusandae consectetur cupiditate nesciunt repellat nihil quo
-            aliquam! Reiciendis totam eius adipisci?
-          </div>
-          <div class="bg-white p-3 mr-0 mb-5 md:mb-0 md:mr-5">
-            Dolores cupiditate amet quia alias voluptate doloribus sunt numquam provident.
-            Laudantium odit aspernatur maiores mollitia deserunt! Maxime quae accusamus sit pariatur, numquam, porro
-            iusto molestiae qui quod deleniti esse. Omnis?
-          </div>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem,
+            voluptas culpa unde expedita magni adipisci laboriosam quos vel,
+            animi vero molestiae reiciendis eaque ullam illo corporis voluptatum
+            maxime perspiciatis aperiam.
+          </p>
         </div>
       </div>
     </div>
-  </div>
-</body>
-
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="dist/js/min.js"></script>
+  </body>
 </html>
