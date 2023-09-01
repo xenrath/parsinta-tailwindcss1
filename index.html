@@ -1,103 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TailwindCSS</title>
-    <link rel="stylesheet" href="dist/css/input.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap"
-      rel="stylesheet"
-    />
-  </head>
 
-  <body class="font-sans">
-    <div id="app">
-      <nav
-        class="flex bg-grey-darkest p-5 justify-between items-center flex-wrap"
-      >
-        <div class="flex">
-          <a
-            href=""
-            class="text-grey-lighter text-xl hover:text-white no-underline mr-12"
-            >Delafan</a
-          >
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TailwindCSS</title>
+  <link rel="stylesheet" href="dist/css/input.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet" />
+</head>
+
+<body class="font-sans">
+  <div id="app">
+    <nav class="flex bg-grey-darkest py-3 px-5 justify-between items-center flex-wrap">
+      <div class="flex items-center">
+        <a href="" class="text-grey-lighter text-xl hover:text-white no-underline mr-12">Delafan</a>
+      </div>
+      <div class="block md:hidden">
+        <button @click="toggle"
+          class="focus:outline-none border border-white py-1 px-2 rounded text-white hover:bg-white hover:text-black">
+          <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M1 1h15M1 7h15M1 13h15" />
+          </svg>
+        </button>
+      </div>
+      <div :class="open ? 'block' : 'hidden'" class="w-full block flex-grow md:flex md:w-auto">
+        <div class="text-sm md:flex-grow">
+          <a href=""
+            class="block md:inline-block mt-5 md:mt-0 text-grey-lighter hover:text-white no-underline mr-6">Series</a>
+          <a href=""
+            class="block md:inline-block mt-5 md:mt-0 text-grey-lighter hover:text-white no-underline mr-6">Premium</a>
+          <a href=""
+            class="block md:inline-block mt-5 md:mt-0 text-grey-lighter hover:text-white no-underline">Search</a>
         </div>
-        <div class="block md:hidden">
-          <button
-            @click="toggle"
-            class="focus:outline-none border border-white py-1 px-2 rounded text-white hover:bg-white hover:text-black"
-          >
-            <svg
-              class="w-5 h-5"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 17 14"
-            >
-              <path
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M1 1h15M1 7h15M1 13h15"
-              />
-            </svg>
-          </button>
-        </div>
-        <div
-          :class="open ? 'block' : 'hidden'"
-          class="w-full block flex-grow md:flex md:w-auto"
-        >
-          <div class="text-sm md:flex-grow">
-            <a
-              href=""
-              class="block md:inline-block mt-5 md:mt-0 text-grey-lighter hover:text-white no-underline mr-6"
-              >Series</a
-            >
-            <a
-              href=""
-              class="block md:inline-block mt-5 md:mt-0 text-grey-lighter hover:text-white no-underline mr-6"
-              >Premium</a
-            >
-            <a
-              href=""
-              class="block md:inline-block mt-5 md:mt-0 text-grey-lighter hover:text-white no-underline"
-              >Search</a
-            >
-          </div>
-          <div class="">
-            <a
-              href=""
-              class="block md:inline-block mt-5 md:mt-0 text-grey-lighter hover:text-white no-underline mr-6"
-              >Login</a
-            >
-            <a
-              href=""
-              class="block md:inline-block mt-5 md:mt-0 text-grey-lighter hover:text-white no-underline"
-              >Register</a
-            >
-          </div>
-        </div>
-      </nav>
-      <div class="bg-black py-24 text-white">
-        <div class="container">
-          <div class="font-light text-5xl mb-3">
-            Saiful Labib Marzuqi Hidayat
-          </div>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem,
-            voluptas culpa unde expedita magni adipisci laboriosam quos vel,
-            animi vero molestiae reiciendis eaque ullam illo corporis voluptatum
-            maxime perspiciatis aperiam.
-          </p>
+        <div class="text-sm">
+          <a href=""
+            class="block md:inline-block mt-5 md:mt-0 text-grey-lighter hover:text-white no-underline mr-6">Login</a>
+          <a href=""
+            class="block md:inline-block mt-5 md:mt-0 text-grey-lighter hover:text-white no-underline">Register</a>
         </div>
       </div>
+    </nav>
+    <div class="bg-grey-darker mb-5 py-6 lg:py-24 text-white">
+      <div class="container">
+        <div class="font-light text-3xl md:text-5xl mb-3">
+          Saiful Labib Marzuqi
+        </div>
+        <p class="leading-normal text-sm md:text-base">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem,
+          voluptas culpa unde expedita magni adipisci laboriosam quos vel,
+          animi vero molestiae reiciendis eaque ullam illo corporis voluptatum
+          maxime perspiciatis aperiam.
+        </p>
+      </div>
     </div>
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <script src="dist/js/min.js"></script>
-  </body>
+    <div class="container">
+      <div class="mb-5 leading-normal">Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia delectus
+        tenetur obcaecati officiis magni ducimus cupiditate est numquam voluptatibus voluptas, quos animi error eius id
+        nam dicta quae? Ipsum, asperiores!</div>
+      <div class="mb-5 leading-normal">Sapiente quis sit optio? Reiciendis unde nihil vel aliquid recusandae dolore
+        placeat quae velit at amet quas consequuntur dolorem blanditiis optio fugiat ipsa cumque sit, esse impedit ex,
+        qui tempora?</div>
+      <div class="mb-5 leading-normal">Ratione consectetur dolorem nesciunt ipsam, vero architecto iure voluptatibus non
+        reprehenderit nam officiis hic quam autem nostrum sint adipisci at magni totam sequi impedit rem qui eum?
+        Perspiciatis, aut dicta.</div>
+      <div class="mb-5 leading-normal">Blanditiis eaque dolorem hic officia illo, rerum, expedita voluptas culpa quam
+        velit assumenda ipsa quidem voluptate vitae commodi accusantium a consequatur aliquid! Sint quaerat ad ipsa
+        laborum, culpa non mollitia.</div>
+      <div class="mb-5 leading-normal">Voluptatum, vero eligendi quo nam perspiciatis nihil dolore, nemo itaque
+        exercitationem error nostrum animi esse, cumque deserunt voluptates! Atque ad voluptates ratione incidunt
+        facilis fuga quisquam eaque possimus temporibus voluptatem?</div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+  <script src="dist/js/min.js"></script>
+</body>
+
 </html>
